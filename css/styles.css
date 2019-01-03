@@ -1,0 +1,74 @@
+/* DEFINING VARIABLES */
+:root {
+  --dark-blue: #111D57;
+  --light-blue: #e6f2ff;
+}
+/* END DEFINING VARIABLES */
+
+
+/* MAIN PAGE */
+body {
+  box-sizing: border-box;
+  background-image: url("../img/blue_background.jpg"); /* source: https://commons.wikimedia.org/wiki/File:Abstract_blue_background7.jpg */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/* END MAIN PAGE */
+
+
+/* NAVBAR */
+.navbar-brand-image {
+  height: 50px;
+}
+/* END NAVBAR */
+
+
+/* MAIN PAGE */
+.main-page {
+  position: relative;
+  top: 50px;
+  width: 90%;
+  margin: auto;
+  background-color: white;
+}
+/* END MAIN PAGE */
+
+
+/* FOOTER */
+.page-content { /* has to do with footer ... do not touch */
+  padding-top: 50px;
+  min-height: calc(100vh - 50px);
+}
+.footer {
+  height: 50px;
+  background-color: var(--dark-blue);
+}
+.footer p {
+  color: var(--light-blue);
+  position: relative;
+  left: 20px;
+  top: 15px;
+}
+/* END FOOTER */
+
+
+/* BOOTSTRAP OVERRIDES */
+.navbar-default {
+  background-color: var(--dark-blue);
+  border-color: var(--light-blue);
+}
+.navbar-default .navbar-nav > li > a {
+  font-size: 20px;
+  font-family: 'Varela Round', sans-serif;
+  color: var(--light-blue);
+  transition: background-color .5s, color .5s;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > .active > a:hover {
+  background-color: var(--light-blue);
+  color: black;
+  border-radius: 2px;
+}
+/* END BOOTSTRAP OVERRIDES */

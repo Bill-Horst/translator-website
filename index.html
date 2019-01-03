@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home - Bill Horst - Translator</title>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- Logo -->
+  <link href="https://images.google.com/images/branding/product/ico/googleg_lodp.ico" rel="shortcut icon">
+  <!-- Normalize -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <!-- Font imports -->
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
+</head>
+
+<body ng-app='translator-site'>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a ui-sref='home'>
+          <img src="img/bill_logo.png" alt="logo" class="navbar-brand-image">
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+
+          <li ng-class="{active: activeTab === 'home'}"><a ui-sref='home'>Home</a></li>
+          <li ng-class="{active: activeTab === 'about'}"><a ui-sref='about'>About</a></li>
+          <li ng-class="{active: activeTab === 'contact'}"><a ui-sref='contact'>Contact</a></li>
+          <li ng-class="{active: activeTab === 'work'}"><a ui-sref='work'>Work</a></li>
+
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div class="page-content"> <!-- has to do with footer ... do not touch -->
+    <div class="main-page">
+
+      <div class='main-view'>
+        <main ui-view></main>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="text-muted">&copy; **Javascript year** Bill Horst - Translator</p>
+  </footer>
+  <!-- END FOOTER -->
+
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+  <!-- Scripts -->
+  <script src='js/app.js'></script>
+
+  <!-- controllers -->
+  <script src='home/home_controller.js'></script>
+  <script src='about/about_controller.js'></script>
+  <script src='contact/contact_controller.js'></script>
+  <script src='work/work_controller.js'></script>
+
+</body>
+
+</html>
