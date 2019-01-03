@@ -5,13 +5,43 @@
   .module('translator-site')
   .controller('contactController', Controller);
 
-  Controller.$inject = ['$scope'];
+  Controller.$inject = ['$rootScope'];
 
-function Controller($scope) {
-  let vm = this;
+  function Controller($rootScope) {
+    let vm = this;
 
-  vm.sup = 'sup from contact controller???';
+    let initController = function() {
+      vm.title = CONTACT_TRANSLATIONS.getLanguage($rootScope.language).title;
+    }
 
-}
+    initController();
 
+    $rootScope.$on('changeLanguage' , function(event, data) {
+      $rootScope.language = data;
+      initController();
+    });
+  }
+
+})();
+
+const CONTACT_TRANSLATIONS = (function() {
+
+  const japanese = {
+    title: 'Kontakuto'
+  };
+  const english = {
+    title: 'Contact'
+  }
+
+  const getLanguage = (language) => {
+    if (language === 'japanese') {
+      return japanese;
+    } else {
+      return english;
+    }
+  }
+
+  return {
+    getLanguage
+  }
 })();

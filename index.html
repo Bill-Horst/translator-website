@@ -21,7 +21,7 @@
 
 </head>
 
-<body ng-app='translator-site'>
+<body ng-app='translator-site' ng-controller="mainController">
 
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -46,6 +46,9 @@
           <li ng-class="{active: activeTab === 'about'}"><a ui-sref='about'>About</a></li>
           <li ng-class="{active: activeTab === 'contact'}"><a ui-sref='contact'>Contact</a></li>
           <li ng-class="{active: activeTab === 'work'}"><a ui-sref='work'>Work</a></li>
+          
+          <li><a ng-click="changeLanguage('japanese')" ng-if="language === 'english'">Japanese</a></li>
+          <li><a ng-click="changeLanguage('english')" ng-if="language === 'japanese'">English</a></li>
 
         </ul>
       </div><!-- /.navbar-collapse -->

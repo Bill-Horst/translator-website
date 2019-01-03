@@ -46,6 +46,32 @@
     });
   }
 
+})();
 
+
+(function() {
+  'use strict';
+
+  angular
+  .module('translator-site')
+  .controller('mainController', Controller);
+
+  Controller.$inject = ['$scope', '$rootScope'];
+
+  function Controller($scope, $rootScope) {
+
+    // This sets the language for the entire application
+    // TODO: Use local storage here to check past language
+    $rootScope.language = 'english';
+
+    // This tells the html page which language button to display:
+    $scope.language = $rootScope.language;
+
+    $scope.changeLanguage = function(language) {
+      $scope.language = language;
+      $rootScope.$broadcast('changeLanguage', language);
+    }
+
+  }
 
 })();
