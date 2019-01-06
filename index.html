@@ -41,14 +41,14 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <!-- English Navigation Items -->
-        <ul class="nav navbar-nav navbar-right language-changeable" ng-if="language === 'english'">
+        <ul class="nav navbar-nav navbar-right language-changeable languages-fade-in" ng-if="language === 'english'">
           <li ng-class="{active: activeTab === 'home'}"><a ui-sref='home'>Home</a></li>
           <li ng-class="{active: activeTab === 'about'}"><a ui-sref='about'>About</a></li>
           <li ng-class="{active: activeTab === 'contact'}"><a ui-sref='contact'>Contact</a></li>
           <li ng-class="{active: activeTab === 'work'}"><a ui-sref='work'>Work</a></li>
         </ul>
         <!-- Japanese Navigation Items -->
-        <ul class="nav navbar-nav navbar-right language-changeable" ng-if="language === 'japanese'">
+        <ul class="nav navbar-nav navbar-right language-changeable languages-fade-in" ng-if="language === 'japanese'">
           <li ng-class="{active: activeTab === 'home'}"><a ui-sref='home'>ホーム</a></li>
           <li ng-class="{active: activeTab === 'about'}"><a ui-sref='about'>自己紹介</a></li>
           <li ng-class="{active: activeTab === 'contact'}"><a ui-sref='contact'>問い合わせ</a></li>
@@ -59,8 +59,8 @@
   </nav>
 
   <div class="languageButtonRibbon">
-    <button ng-click="changeLanguage('japanese')" ng-if="language === 'english'">Japanese</button>
-    <button ng-click="changeLanguage('english')" ng-if="language === 'japanese'">英語</button>
+    <button ng-click="changeLanguage('japanese')" ng-if="language === 'english'" class="language-changeable" ng-disabled="languageButtonDisabled">Japanese</button>
+    <button ng-click="changeLanguage('english')" ng-if="language === 'japanese'" class="language-changeable" ng-disabled="languageButtonDisabled">英語</button>
   </div>
 
   <div class="page-content"> <!-- has to do with footer ... do not touch -->

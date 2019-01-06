@@ -29,6 +29,12 @@ body {
 .navbar-brand-image {
   height: 50px;
 }
+.navbar li {
+  min-width: 160px;
+}
+.navbar li a {
+  text-align: center;
+}
 /* END NAVBAR */
 
 
@@ -62,11 +68,18 @@ body {
 }
 /* END LANGUAGE BUTTON RIBBON */
 
+/* background: #7abcff;
+background: -moz-linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%);
+background: -webkit-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%);
+background: linear-gradient(to bottom, #7abcff 0%,#60abf8 44%,#4096ee 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); */
 
 /* SHARED STYLES */
-.page-header {
+.custom-page-header {
   font-size: 18pt;
-  border-bottom: 2px solid var(--dark-blue);
+  /* border-bottom: 2px solid var(--dark-blue); */
+  background: var(--lighter-blue);
+  background: linear-gradient(to bottom, var(--light-blue) 0%, var(--lighter-blue) 100%);
 }
 /* END SHARED STYLES */
 
@@ -135,18 +148,26 @@ body {
 
 
 /* ANIMATIONS */
-.animate-content {
-  animation: 500ms slide-content-on-change infinite linear;
+.animate-content-out {
+  animation: 350ms languages-fade-out;
 }
-@keyframes slide-content-on-change {
-  0% {
-    opacity: 1;
-  }
-  50% {
+.animate-content-in {
+  animation: 350ms languages-fade-in;
+}
+@keyframes languages-fade-in {
+  0%{
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes languages-fade-out {
+  0%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 /* END ANIMATIONS */

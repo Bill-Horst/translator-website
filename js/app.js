@@ -69,23 +69,29 @@
 
     $scope.changeLanguage = function(language) {
       let paragraphs = document.querySelectorAll('.language-changeable');
+      $scope.languageButtonDisabled = false;
 
-      // add classes for animation immediately
+      // add classes for animation immediately and disable language button
       for (var i = 0; i < paragraphs.length; ++i) {
-        paragraphs[i].classList.add('animate-content');
+        paragraphs[i].classList.remove('animate-content-in');
+        paragraphs[i].classList.add('animate-content-out');
       }
+      $scope.languageButtonDisabled = true;
 
-      // halfway through animation, change language
+
+      // about halfway through animation, change language
       $timeout(function() {
         $scope.language = language;
         $rootScope.$broadcast('changeLanguage', language);
+        for (var i = 0; i < paragraphs.length; ++i) {
+          paragraphs[i].classList.remove('animate-content-out');
+          paragraphs[i].classList.add('animate-content-in');
+        }
       }, 250);
 
-      // remove animation classes after animations run their course
+      // enable language button after animations are finished
       $timeout(function() {
-        for (var i = 0; i < paragraphs.length; ++i) {
-          paragraphs[i].classList.remove('animate-content');
-        }
+        $scope.languageButtonDisabled = false;
       }, 500);
     }
 
