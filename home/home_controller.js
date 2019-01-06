@@ -27,7 +27,7 @@
 const HOME_TRANSLATIONS = (function() {
 
   const japanese = {
-    title: 'Hoomu'
+    title: 'ホーム'
   };
   const english = {
     title: 'Home'

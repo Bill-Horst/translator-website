@@ -27,7 +27,7 @@
 const ABOUT_TRANSLATIONS = (function() {
 
   const japanese = {
-    title: 'Abauto'
+    title: '自己紹介'
   };
   const english = {
     title: 'About'

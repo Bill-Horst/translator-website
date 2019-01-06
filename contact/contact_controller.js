@@ -27,7 +27,7 @@
 const CONTACT_TRANSLATIONS = (function() {
 
   const japanese = {
-    title: 'Kontakuto'
+    title: '問い合わせ'
   };
   const english = {
     title: 'Contact'

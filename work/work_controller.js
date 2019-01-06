@@ -27,7 +27,7 @@
 const WORK_TRANSLATIONS = (function() {
 
   const japanese = {
-    title: 'Waaku'
+    title: 'プロジェクト'
   };
   const english = {
     title: 'Work'

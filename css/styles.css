@@ -2,11 +2,13 @@
 :root {
   --dark-blue: #111D57;
   --light-blue: #e6f2ff;
+  --lighter-blue: #e6e6ff;
+  --lightest-blue: #f9fbff;
 }
 /* END DEFINING VARIABLES */
 
 
-/* MAIN PAGE */
+/* GENERAL PAGE STYLES */
 body {
   box-sizing: border-box;
   background-image: url("../img/blue_background.jpg"); /* source: https://commons.wikimedia.org/wiki/File:Abstract_blue_background7.jpg */
@@ -14,10 +16,13 @@ body {
   background-position: center;
   background-size: cover;
 }
-/* END MAIN PAGE */
+/* END GENERAL PAGE STYLES */
 
 
 /* NAVBAR */
+.navbar {
+  border: none;
+}
 .navbar-brand-image {
   height: 50px;
 }
@@ -26,13 +31,53 @@ body {
 
 /* MAIN PAGE */
 .main-page {
-  position: relative;
-  top: 50px;
-  width: 90%;
-  margin: auto;
-  background-color: white;
+  background-color: var(--lighter-blue);
+  margin-top: 55px;
 }
 /* END MAIN PAGE */
+
+
+/* LANGUAGE BUTTON RIBBON */
+.languageButtonRibbon {
+  position: fixed;
+  right: 0;
+  top: 65px;
+}
+.languageButtonRibbon button {
+  background-color: var(--dark-blue);
+  color: var(--light-blue);
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  font-family: cursive;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-shadow: 4px 3px 9px var(--dark-blue);
+}
+/* END LANGUAGE BUTTON RIBBON */
+
+/* SHARED STYLES */
+.page-header {
+  font-size: 18pt;
+  border-bottom: 2px solid var(--dark-blue);
+}
+/* END SHARED STYLES */
+
+
+/* HOME PAGE */
+.about-page-bill-image {
+  padding: 10px;
+}
+.about-page-bill-image img {
+  width: 100%;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+/* END HOME PAGE */
 
 
 /* FOOTER */
@@ -44,7 +89,7 @@ body {
   height: 50px;
   background-color: var(--dark-blue);
 }
-.footer p {
+.footer span {
   color: var(--light-blue);
   position: relative;
   left: 20px;
@@ -72,3 +117,10 @@ body {
   border-radius: 2px;
 }
 /* END BOOTSTRAP OVERRIDES */
+
+
+/* GENERAL STYLES */
+.align-center {
+  text-align: center;
+}
+/* END GENERAL STYLES */
