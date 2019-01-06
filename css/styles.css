@@ -11,10 +11,13 @@
 /* GENERAL PAGE STYLES */
 body {
   box-sizing: border-box;
-  background-image: url("../img/blue_background.jpg"); /* source: https://commons.wikimedia.org/wiki/File:Abstract_blue_background7.jpg */
+  /* background-image: url("../img/blue_background.jpg"); /* source: https://commons.wikimedia.org/wiki/File:Abstract_blue_background7.jpg */ */
+  background-image: url("https://s22409.pcdn.co/wp-content/uploads/2015/07/gog_shutterstock.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  font-size: 14pt;
+  font-family: "Helvetica";
 }
 /* END GENERAL PAGE STYLES */
 
@@ -33,6 +36,8 @@ body {
 .main-page {
   background-color: var(--lighter-blue);
   margin-top: 55px;
+  border-radius: 5px;
+  box-shadow: 4px 3px 9px var(--dark-blue);
 }
 /* END MAIN PAGE */
 
@@ -42,6 +47,7 @@ body {
   position: fixed;
   right: 0;
   top: 65px;
+  z-index: 1;
 }
 .languageButtonRibbon button {
   background-color: var(--dark-blue);
@@ -56,6 +62,7 @@ body {
 }
 /* END LANGUAGE BUTTON RIBBON */
 
+
 /* SHARED STYLES */
 .page-header {
   font-size: 18pt;
@@ -64,7 +71,8 @@ body {
 /* END SHARED STYLES */
 
 
-/* HOME PAGE */
+/* ABOUT PAGE */
+.about-page
 .about-page-bill-image {
   padding: 10px;
 }
@@ -77,7 +85,7 @@ body {
   filter: FlipH;
   -ms-filter: "FlipH";
 }
-/* END HOME PAGE */
+/* END ABOUT PAGE */
 
 
 /* FOOTER */
@@ -124,3 +132,21 @@ body {
   text-align: center;
 }
 /* END GENERAL STYLES */
+
+
+/* ANIMATIONS */
+.animate-content {
+  animation: 500ms slide-content-on-change infinite linear;
+}
+@keyframes slide-content-on-change {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* END ANIMATIONS */

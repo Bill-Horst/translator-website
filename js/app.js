@@ -56,9 +56,9 @@
   .module('translator-site')
   .controller('mainController', Controller);
 
-  Controller.$inject = ['$scope', '$rootScope'];
+  Controller.$inject = ['$scope', '$rootScope', '$timeout'];
 
-  function Controller($scope, $rootScope) {
+  function Controller($scope, $rootScope, $timeout) {
 
     // This sets the language for the entire application
     // TODO: Use local storage here to check past language
@@ -68,8 +68,25 @@
     $scope.language = $rootScope.language;
 
     $scope.changeLanguage = function(language) {
-      $scope.language = language;
-      $rootScope.$broadcast('changeLanguage', language);
+      let paragraphs = document.querySelectorAll('.language-changeable');
+
+      // add classes for animation immediately
+      for (var i = 0; i < paragraphs.length; ++i) {
+        paragraphs[i].classList.add('animate-content');
+      }
+
+      // halfway through animation, change language
+      $timeout(function() {
+        $scope.language = language;
+        $rootScope.$broadcast('changeLanguage', language);
+      }, 250);
+
+      // remove animation classes after animations run their course
+      $timeout(function() {
+        for (var i = 0; i < paragraphs.length; ++i) {
+          paragraphs[i].classList.remove('animate-content');
+        }
+      }, 500);
     }
 
   }
